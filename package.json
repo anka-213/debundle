@@ -24,23 +24,23 @@
     "url": "git+https://github.com/scil/reliable-debundle.git"
   },
   "dependencies": {
-    "acorn": "^7.4.1",
+    "acorn": "^8.4.1",
     "arboreal": "0.0.2",
     "archy": "^1.0.0",
-    "escodegen": "^1.14.3",
-    "inquirer": "^7.3.3",
+    "escodegen": "^2.0.0",
+    "inquirer": "^8.1.1",
     "js-beautify": "^1.14.0",
     "memoize": "^0.1.1",
-    "minimist": "^1.2.0",
-    "mkdirp": "^0.5.1",
-    "prettier": "2.1.2",
-    "promise-map-series": "^0.2.3",
+    "minimist": "^1.2.5",
+    "mkdirp": "^1.0.4",
+    "prettier": "2.3.2",
+    "promise-map-series": "^0.3.0",
     "prompt-sync": "^4.2.0",
-    "recast": "~0.19.1"
+    "recast": "~0.20.4"
   },
   "devDependencies": {
     "mocha": "^9.0.1",
-    "mock-fs": "^4.1.0",
+    "mock-fs": "^5.0.0",
     "nyc": "^15.1.0"
   },
   "bin": {
