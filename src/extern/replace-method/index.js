@@ -201,8 +201,13 @@ function replacer(ast, config) {
                         ||
                         (dec.id.type === 'ObjectPattern' && dec.id.properties.some(
                                 (property) =>
+                                    // (property.type == 'RestElement' && )   
+                                    property.type === 'Property'
+                                &&
+                                (
                                     property.value.name === methodPath[0]   // case2
                                 || (property.value.type==='AssignmentPattern' && property.value.left.name===methodPath[0]) //case3
+                                )
                             )
                         )
                 )
