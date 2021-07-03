@@ -78,17 +78,23 @@ else if (!['keep', 'replace', 'ask'].includes(config.inDescendantsOfSameNameDecl
 
 
 if (config.replaceResultString) {
-    assert(true,
-        'from' in config.replaceResultString &&
-        'to' in config.replaceResultString
-    )
+    // assert(true, config.replaceResultString instanceof Array)
+    if (!config.replaceResultString instanceof Array) {
+        config.replaceResultString = [configf.replaceResultString]
+    }
+    for (let replaceResultString of config.replaceResultString) {
+        assert(true,
+            'from' in replaceResultString &&
+            'to' in replaceResultString
+        )
 
-    // 'all' is only for regexp
-    if (!('all' in config.replaceResultString))
-        config.replaceResultString.all = true
+        // 'all' is only for regexp
+        if (!('all' in replaceResultString))
+            replaceResultString.all = true
 
-    if (config.replaceResultString.regexp) {
-        config.replaceResultString.from = new RegExp(config.replaceResultString.from, config.replaceResultString.all ? 'gm' : '')
+        if (replaceResultString.regexp) {
+            replaceResultString.from = new RegExp(replaceResultString.from, replaceResultString.all ? 'gm' : '')
+        }
     }
 }
 
