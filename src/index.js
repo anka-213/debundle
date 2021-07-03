@@ -80,7 +80,7 @@ else if (!['keep', 'replace', 'ask'].includes(config.inDescendantsOfSameNameDecl
 if (config.replaceResultString) {
     // assert(true, config.replaceResultString instanceof Array)
     if (!config.replaceResultString instanceof Array) {
-        config.replaceResultString = [configf.replaceResultString]
+        config.replaceResultString = [config.replaceResultString]
     }
     for (let replaceResultString of config.replaceResultString) {
         assert(true,
