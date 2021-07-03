@@ -89,15 +89,7 @@ function writeToDisk(codesOfFiles, config) {
         return writeFile(`${path.normalize(filePath)}.js`, code, config);
       } else {
         console.log(`* ${directory} doesn't exist, creating...`);
-        return new Promise((resolve, reject) => {
-          mkdirp(directory, (err, resp) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(writeFile(`${filePath}.js`, code, config));
-            }
-          });
-        });
+        return mkdirp(directory);
       }
     })
   );
