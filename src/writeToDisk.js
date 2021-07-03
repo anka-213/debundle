@@ -89,7 +89,9 @@ function writeToDisk(codesOfFiles, config) {
         return writeFile(`${path.normalize(filePath)}.js`, code, config);
       } else {
         console.log(`* ${directory} doesn't exist, creating...`);
-        return mkdirp(directory);
+        return mkdirp(directory).then(() =>
+          writeFile(`${filePath}.js`, code, config)
+        );
       }
     })
   );
